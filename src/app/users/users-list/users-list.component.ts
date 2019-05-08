@@ -17,7 +17,11 @@ export class UsersListComponent implements OnInit {
   ngOnInit() {
     this.usersService.getAllUsers().subscribe((response) => {
       console.log(response);
+      this.users = response;
     });
   }
 
+  onItemDeleted(index: number): void {
+    this.users.splice(index, 1);
+  }
 }

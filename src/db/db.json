@@ -3,27 +3,32 @@
         {
           "name": "Ora Chapman",
           "username": "Roberson",
-          "password": 782
+          "password": "782",
+          "picture": "https://picsum.photos/200/300"
         },
         {
           "name": "Savannah Stevens",
           "username": "Summers",
-          "password": 220
+          "password": "220",
+          "picture": "https://picsum.photos/200/300"
         },
         {
           "name": "Shelby Hess",
           "username": "Reynolds",
-          "password": 635
+          "password": "635",
+          "picture": "https://picsum.photos/200/300"
         },
         {
           "name": "Buckley Estes",
           "username": "Mamie",
-          "password": 341
+          "password": "341",
+          "picture": "https://picsum.photos/200/300"
         },
         {
           "name": "Lyons Vincent",
           "username": "Katharine",
-          "password": 457
+          "password": 457,
+          "picture": "https://picsum.photos/200/300"
         }
       ],
     "tasks": [
