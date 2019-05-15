@@ -1,71 +1,83 @@
 {
-    "users": [
-        {
-          "name": "Ora Chapman",
-          "username": "Roberson",
-          "password": "782",
-          "picture": "https://picsum.photos/200/300"
-        },
-        {
-          "name": "Savannah Stevens",
-          "username": "Summers",
-          "password": "220",
-          "picture": "https://picsum.photos/200/300"
-        },
-        {
-          "name": "Shelby Hess",
-          "username": "Reynolds",
-          "password": "635",
-          "picture": "https://picsum.photos/200/300"
-        },
-        {
-          "name": "Buckley Estes",
-          "username": "Mamie",
-          "password": "341",
-          "picture": "https://picsum.photos/200/300"
-        },
-        {
-          "name": "Lyons Vincent",
-          "username": "Katharine",
-          "password": 457,
-          "picture": "https://picsum.photos/200/300"
-        }
-      ],
-    "tasks": [
-        {
-          "guid": "2635f0a4-8316-46e1-8bdc-6852ad499644",
-          "title": "cillum",
-          "description": "Fugiat magna ullamco aute aliqua quis voluptate mollit fugiat proident excepteur anim. Dolore non eu dolore aliqua id incididunt cupidatat consectetur voluptate mollit.",
-          "creationDate": "2014-12-25T11:39:06 -02:00",
-          "assigneeId": ""
-        },
-        {
-          "guid": "40574759-502a-4f01-8da4-095d21440aa2",
-          "title": "amet",
-          "description": "Non ut consectetur voluptate esse veniam enim sit veniam elit officia sint labore. Aute nostrud nisi consequat et culpa esse anim.",
-          "creationDate": "2014-03-01T11:46:26 -02:00",
-          "assigneeId": ""
-        },
-        {
-          "guid": "6933b8cc-ac6d-4638-b033-d7f13ebf2dc0",
-          "title": "labore",
-          "description": "Id fugiat amet ea aliquip sit do occaecat. In aute laboris tempor aliqua aliquip ut in dolor adipisicing sint Lorem consequat elit labore.",
-          "creationDate": "2016-04-14T04:43:10 -03:00",
-          "assigneeId": ""
-        },
-        {
-          "guid": "b4afe438-e60a-4e7c-9984-44db0ae92221",
-          "title": "magna",
-          "description": "Pariatur elit esse est ipsum occaecat ea ut eiusmod ullamco officia culpa. Reprehenderit quis ut occaecat consequat ullamco proident non voluptate.",
-          "creationDate": "2014-02-19T12:03:23 -02:00",
-          "assigneeId": ""
-        },
-        {
-          "guid": "8cf7dff8-958d-46eb-a7c9-13a54ea93999",
-          "title": "officia",
-          "description": "Aliquip mollit elit labore ut et consequat irure minim laborum. Ea laboris incididunt laboris aliquip veniam elit ullamco fugiat duis.",
-          "creationDate": "2015-01-12T12:32:45 -02:00",
-          "assigneeId": ""
-        }
-      ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Ora Chapman",
+      "username": "Roberson",
+      "password": "782",
+      "picture": "https://picsum.photos/200/300"
+    },
+    {
+      "id": 2,
+      "name": "Savannah Stevens",
+      "username": "Summers",
+      "password": "220",
+      "picture": "https://picsum.photos/200/300"
+    },
+    {
+      "id": 3,
+      "name": "Shelby Hess",
+      "username": "Reynolds",
+      "password": "635",
+      "picture": "https://picsum.photos/200/300"
+    },
+    {
+      "id": 4,
+      "name": "Buckley Estes",
+      "username": "Mamie",
+      "password": "341",
+      "picture": "https://picsum.photos/200/300"
+    },
+    {
+      "id": 5,
+      "name": "Lyons Vincent",
+      "username": "Katharine",
+      "password": 457,
+      "picture": "https://picsum.photos/200/300"
+    },
+    {
+      "name": "jason der",
+      "username": "jlo",
+      "password": "d13e",
+      "picture": "https://picsum.photos/200/300",
+      "id": 6
+    }
+  ],
+  "tasks": [
+    {
+      "guid": "2635f0a4-8316-46e1-8bdc-6852ad499644",
+      "title": "cillum",
+      "description": "Fugiat magna ullamco aute aliqua quis voluptate mollit fugiat proident excepteur anim. Dolore non eu dolore aliqua id incididunt cupidatat consectetur voluptate mollit.",
+      "creationDate": "2014-12-25T11:39:06 -02:00",
+      "assigneeId": ""
+    },
+    {
+      "guid": "40574759-502a-4f01-8da4-095d21440aa2",
+      "title": "amet",
+      "description": "Non ut consectetur voluptate esse veniam enim sit veniam elit officia sint labore. Aute nostrud nisi consequat et culpa esse anim.",
+      "creationDate": "2014-03-01T11:46:26 -02:00",
+      "assigneeId": ""
+    },
+    {
+      "guid": "6933b8cc-ac6d-4638-b033-d7f13ebf2dc0",
+      "title": "labore",
+      "description": "Id fugiat amet ea aliquip sit do occaecat. In aute laboris tempor aliqua aliquip ut in dolor adipisicing sint Lorem consequat elit labore.",
+      "creationDate": "2016-04-14T04:43:10 -03:00",
+      "assigneeId": ""
+    },
+    {
+      "guid": "b4afe438-e60a-4e7c-9984-44db0ae92221",
+      "title": "magna",
+      "description": "Pariatur elit esse est ipsum occaecat ea ut eiusmod ullamco officia culpa. Reprehenderit quis ut occaecat consequat ullamco proident non voluptate.",
+      "creationDate": "2014-02-19T12:03:23 -02:00",
+      "assigneeId": ""
+    },
+    {
+      "guid": "8cf7dff8-958d-46eb-a7c9-13a54ea93999",
+      "title": "officia",
+      "description": "Aliquip mollit elit labore ut et consequat irure minim laborum. Ea laboris incididunt laboris aliquip veniam elit ullamco fugiat duis.",
+      "creationDate": "2015-01-12T12:32:45 -02:00",
+      "assigneeId": ""
+    }
+  ]
 }
