@@ -1,0 +1,48 @@
+<div class="course-form-holder mt-3">
+	<form [formGroup]="courseForm" (ngSubmit)="onFormSubmit($event)">
+		<div class="row">
+			<div class="offset-2 col-8">
+				<div class="form-group">
+					<label>Title</label>
+					<input class="form-control" name="title" formControlName="title">
+					<div class="error" *ngIf="title?.errors">
+						<span class="text-danger" *ngIf="title.errors.minlength">
+								The min length is 2.
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="offset-2 col-8">
+				<div class="form-group">
+					<label>Description</label>
+					<textarea class="form-control" rows="4" cols="50" name="title" formControlName="description"></textarea>
+					<div class="error" *ngIf="title?.errors">
+						<span class="text-danger" *ngIf="title.errors.minlength">
+								The min length is 10.
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="offset-2 col-8">
+				<div class="form-group">
+					<label>Rating</label>
+					<input class="form-control" type="number" name="rating" formControlName="rating">
+					<div class="error" *ngIf="rating?.errors">
+						<span class="text-danger" *ngIf="rating.errors.pattern">
+								From 1 to 100
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="offset-2 col-8 text-right">
+				<button type="submit" class="btn btn-primary" [disabled]="!isFormValid">Save course</button>
+			</div>
+		</div>
+	</form>
+</div>

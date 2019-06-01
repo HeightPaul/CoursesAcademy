@@ -1,0 +1,10 @@
+<div class="courses-holder">
+	<div class="row justify-content-end">
+		<button class="btn btn-primary mr-3 mt-2" (click)="onAddCourse()">Add new course</button>
+	</div>
+	<div class="row">
+		<div class="course-card col-4 mt-3 mb-3" *ngFor="let currentCourse of courses; let index = index">
+			<app-course-card (onDelete)="onItemDeleted($event)" [course]="currentCourse"></app-course-card>
+		</div>
+	</div>
+</div>

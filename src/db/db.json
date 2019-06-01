@@ -3,51 +3,75 @@
     {
       "id": 1,
       "name": "Ora Chapman",
+      "email": "gg@gg.gg",
       "username": "Roberson",
       "password": "782",
-      "picture": "https://picsum.photos/200/300"
+      "picture": "https://picsum.photos/200/300",
+      "isBlocked": false
     },
     {
       "id": 2,
       "name": "Savannah Stevens",
+      "email": "ss@ss.ss",
       "username": "Summers",
       "password": "220",
-      "picture": "https://picsum.photos/200/300"
+      "picture": "https://picsum.photos/200/300",
+      "isBlocked": false
     },
     {
       "id": 3,
       "name": "Shelby Hess",
+      "email": "sh@hes.seh",
       "username": "Reynolds",
       "password": "635",
-      "picture": "https://picsum.photos/200/300"
+      "picture": "https://picsum.photos/200/300",
+      "isBlocked": false
     },
     {
       "id": 4,
       "name": "Buckley Estes",
+      "email": "bg@dfd.sds",
       "username": "Mamie",
       "password": "341",
-      "picture": "https://picsum.photos/200/300"
+      "picture": "https://picsum.photos/200/300",
+      "isBlocked": false
     },
     {
       "id": 5,
       "name": "Lyons Vincent",
+      "email": "bg@dfd.sds",
       "username": "Katharine",
       "password": 457,
-      "picture": "https://picsum.photos/200/300"
+      "picture": "https://picsum.photos/200/300",
+      "isBlocked": false
     },
     {
       "name": "jason der",
+      "email": "bg@dsad.sd",
       "username": "jlo",
       "password": "d13e",
       "picture": "https://picsum.photos/200/300",
-      "id": 6
+      "id": 6,
+      "isBlocked": false
     },
     {
       "id": 7,
       "name": "Wazup0",
+      "email": "asd@dsdd.sd",
       "username": "Pls work",
-      "password": "dope",
-      "picture": "https://picsum.photos/200/300"
+      "password": "dopeh",
+      "picture": "https://picsum.photos/200/300",
+      "isBlocked": false,
+      "role": "admin"
+    },
+    {
+      "id": 8,
+      "name": "sada",
+      "email": "gg@gg.gg",
+      "username": "Goerre",
+      "password": "12345",
+      "picture": "https://picsum.photos/200/300",
+      "isBlocked": "true"
     }
   ],
   "tasks": [
@@ -85,6 +109,41 @@
       "description": "Aliquip mollit elit labore ut et consequat irure minim laborum. Ea laboris incididunt laboris aliquip veniam elit ullamco fugiat duis.",
       "creationDate": "2015-01-12T12:32:45 -02:00",
       "assigneeId": ""
+    }
+  ],
+  "courses": [
+    {
+      "id": "2635f0a4-8316-46e1-8bdc-6852ad499644",
+      "title": "Web basics with HTML-CSS",
+      "description": "HTML is the standard markup language for creating Web pages. HTML stands for Hyper Text Markup Language. CSS stands for Cascading Style Sheets",
+      "rating": 54
+    },
+    {
+      "id": "40574759-502a-4f01-8da4-095d21440aa2",
+      "title": "Angular Framework",
+      "description": "Non ut consectetur voluptate esse veniam enim sit veniam elit officia sint labore. Aute nostrud nisi consequat et culpa esse anim.",
+      "rating": 70,
+      "assigneeId": ""
+    },
+    {
+      "id": "b4afe438-e60a-4e7c-9984-44db0ae92221",
+      "title": "Basics of C++",
+      "description": "Pariatur elit esse est ipsum occaecat ea ut eiusmod ullamco officia culpa. Reprehenderit quis ut occaecat consequat ullamco proident non voluptate.",
+      "rating": 52,
+      "assigneeId": ""
+    },
+    {
+      "id": "8cf7dff8-958d-46eb-a7c9-13a54ea93999",
+      "title": "Cybersecurity",
+      "description": "Aliquip mollit elit labore ut et consequat irure minim laborum. Ea laboris incididunt laboris aliquip veniam elit ullamco fugiat duis.",
+      "rating": 73,
+      "assigneeId": ""
+    },
+    {
+      "id": "lUpDI44",
+      "title": "Python in Data Science",
+      "description": "The most recent major version of Python is Python 3, which we shall be using in this tutorial. However, Python 2, although not being updated with anything other than security updates, is still quite popular.",
+      "rating": "1"
     }
   ]
 }

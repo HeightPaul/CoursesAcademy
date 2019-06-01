@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { UsersListComponent } from './users/users-list/users-list.component';
 import { MainViewComponent } from './layout/main-view/main-view.component';
 import { AuthenticatedGuard } from './auth/guards/authenticated.guard';
 import { NonAuthenticatedGuard } from './auth/guards/non-authenticated.guard';
@@ -17,6 +16,11 @@ export const routes: Routes = [
             {
                 path: 'tasks',
                 loadChildren: './tasks/tasks.module#TasksModule',
+                canLoad: [AuthenticatedGuard]
+            },
+            {
+                path: 'courses',
+                loadChildren: './courses/courses.module#CoursesModule',
                 canLoad: [AuthenticatedGuard]
             }
         ]
