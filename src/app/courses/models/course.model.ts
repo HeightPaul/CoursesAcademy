@@ -3,4 +3,5 @@ export default interface CourseInterface {
 	title?: string;
 	description?: string;
 	rating?: string;
+	assigneeId?: string;
 }

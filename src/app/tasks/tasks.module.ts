@@ -7,10 +7,10 @@ import { routes } from './routes';
 import { TaskCardComponent } from './task-card/task-card.component';
 
 @NgModule({
-    declarations: [TasksComponent, TasksListComponent, TaskCardComponent],
-    imports: [
-        CommonModule,
-        RouterModule.forChild(routes)
-    ]
+	declarations: [TasksComponent, TasksListComponent, TaskCardComponent],
+	imports: [
+		CommonModule,
+		RouterModule.forChild(routes)
+	]
 })
 export class TasksModule { }

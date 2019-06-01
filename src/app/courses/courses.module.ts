@@ -10,12 +10,12 @@ import { AddCourseComponent } from './add-course/add-course.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [CoursesListComponent, CourseCardComponent, CoursesComponent, AddCourseComponent],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    RouterModule.forChild(routes)
-  ]
+	declarations: [CoursesListComponent, CourseCardComponent, CoursesComponent, AddCourseComponent],
+	imports: [
+		CommonModule,
+		HttpClientModule,
+		ReactiveFormsModule,
+		RouterModule.forChild(routes)
+	]
 })
 export class CoursesModule { }

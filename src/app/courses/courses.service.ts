@@ -4,28 +4,32 @@ import { Observable } from 'rxjs';
 import CourseInterface from './models/course.model';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export default class CoursesService {
 
-  constructor(private http: HttpClient) { }
+	constructor(private http: HttpClient) { }
 
-  getAllCourses(): Observable<CourseInterface[]> {
-    return this.http.get<CourseInterface[]>('http://localhost:3000/courses');
-  }
+	getAllCourses(): Observable<CourseInterface[]> {
+		return this.http.get<CourseInterface[]>('http://localhost:3000/courses');
+	}
 
-  deleteCourse(id: number): Observable<any> {
-    return this.http.delete('http://localhost:3000/courses/' + id);
-  }
+	deleteCourse(id: number): Observable<any> {
+		return this.http.delete('http://localhost:3000/courses/' + id);
+	}
 
-  addNewCourse(course: CourseInterface): Observable<any> {
-    if (course.id) {
-      return this.http.put(`http://localhost:3000/courses/${course.id}`, course)
-    }
-    return this.http.post('http://localhost:3000/courses', course)
-  }
+	addNewCourse(course: CourseInterface): Observable<any> {
+		if (course.id) {
+			return this.http.put(`http://localhost:3000/courses/${course.id}`, course)
+		}
+		return this.http.post('http://localhost:3000/courses', course)
+	}
 
-  getById(id: number): Observable<CourseInterface> {
-    return this.http.get<CourseInterface>(`http://localhost:3000/courses/${id}`);
-  }
+	getById(id: number): Observable<CourseInterface> {
+		return this.http.get<CourseInterface>(`http://localhost:3000/courses/${id}`);
+	}
+
+	public assignTask(course: CourseInterface): Observable<any> {
+		return this.http.put(`http://localhost:3000/courses/${course.id}`, course);
+	}
 }

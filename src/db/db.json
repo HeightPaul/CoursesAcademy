@@ -7,16 +7,18 @@
       "username": "Roberson",
       "password": "782",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": false
+      "isBlocked": false,
+      "role": "user"
     },
     {
       "id": 2,
-      "name": "Savannah Stevens",
+      "name": "Savannah",
       "email": "ss@ss.ss",
       "username": "Summers",
-      "password": "220",
+      "password": "220sdsd",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": false
+      "isBlocked": true,
+      "role": "user"
     },
     {
       "id": 3,
@@ -25,7 +27,8 @@
       "username": "Reynolds",
       "password": "635",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": false
+      "isBlocked": false,
+      "role": "user"
     },
     {
       "id": 4,
@@ -34,7 +37,8 @@
       "username": "Mamie",
       "password": "341",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": false
+      "isBlocked": false,
+      "role": "user"
     },
     {
       "id": 5,
@@ -43,7 +47,8 @@
       "username": "Katharine",
       "password": 457,
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": false
+      "isBlocked": false,
+      "role": "user"
     },
     {
       "name": "jason der",
@@ -52,7 +57,8 @@
       "password": "d13e",
       "picture": "https://picsum.photos/200/300",
       "id": 6,
-      "isBlocked": false
+      "isBlocked": false,
+      "role": "user"
     },
     {
       "id": 7,
@@ -66,12 +72,13 @@
     },
     {
       "id": 8,
-      "name": "sada",
+      "name": "DopeS",
       "email": "gg@gg.gg",
       "username": "Goerre",
       "password": "12345",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": "true"
+      "isBlocked": false,
+      "role": "admin"
     }
   ],
   "tasks": [
@@ -116,7 +123,8 @@
       "id": "2635f0a4-8316-46e1-8bdc-6852ad499644",
       "title": "Web basics with HTML-CSS",
       "description": "HTML is the standard markup language for creating Web pages. HTML stands for Hyper Text Markup Language. CSS stands for Cascading Style Sheets",
-      "rating": 54
+      "rating": 54,
+      "assigneeId": "8"
     },
     {
       "id": "40574759-502a-4f01-8da4-095d21440aa2",
@@ -137,7 +145,7 @@
       "title": "Cybersecurity",
       "description": "Aliquip mollit elit labore ut et consequat irure minim laborum. Ea laboris incididunt laboris aliquip veniam elit ullamco fugiat duis.",
       "rating": 73,
-      "assigneeId": ""
+      "assigneeId": "8"
     },
     {
       "id": "lUpDI44",
