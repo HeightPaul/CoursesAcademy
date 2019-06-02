@@ -1,36 +1,40 @@
 <div class="login-holder">
-  <div class="container">
-    <div class="form-holder">
-        <h3>Login</h3>
-        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label>Username</label>
-                <input type="text" 
-                class="form-control"
-                formControlName="username"
-                >
-              </div>
-            </div>
-          </div>
-          <div class="row">
-              <div class="col-12">
-                <div class="form-group">
-                  <label>Password</label>
-                  <input type="password" 
-                  class="form-control"
-                  formControlName="password"
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary">Login</button>
-              </div>
-            </div>
-        </form>
-    </div>    
-  </div>
+	<div class="container">
+		<div class="form-holder bg-light">
+			<h3>Log in</h3>
+			<h3><em>Courses Academy</em></h3>
+			<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+				<div class="row">
+					<div class="col-12">
+						<div class="form-group">
+							<label>Username or email</label>
+							<input type="text" 
+							class="form-control"
+							formControlName="username"
+							>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label>Password</label>
+								<input type="password" 
+								class="form-control"
+								formControlName="password"
+								>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col m-1">
+							<button type="submit" class="btn btn-primary">Log in</button>
+						</div>
+						<div class="col m-1">
+							<a routerLink="/auth/register" class="btn btn-primary">Register</a>
+						</div>
+					</div>
+			</form>
+		</div>
+	</div>
 </div>

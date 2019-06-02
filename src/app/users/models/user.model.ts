@@ -4,7 +4,7 @@ export default interface UserInterface {
 	username: string;
 	email: string;
 	password: string;
-	picture: string;
-	isBlocked?: boolean;
+	picture?: string;
+	isBlocked: string;
 	role: string;
 }

@@ -1,21 +1,18 @@
 <div class="user-card bg-light p-2">
-	<div class="d-flex justify-content-end mt-2 mb-1">
+	<div class="d-flex justify-content-end flex-wrap mt-2 mb-1">
 		<h3 class="mr-5">{{ user.name }}</h3>
 		<span class="edit-btn btn btn-success m-1" (click)="onUserEdit()">Edit</span>
 		<span class="delete-btn btn btn-danger m-1" tooltip="Delete" placement="top"
 			container="body" title="Delete" (click)="onDeleteClicked()">X</span>
 	</div>
-	<div class="row">
-		<div class="col-6">
+	<div class="row flex-wrap">
+		<div class="col-sm">
 			<div class="image-holder">
 				<img class="user-img" [src]="getUserImage()" alt="user picture" />
 			</div>
 		</div>
-		<div class="col-6">
+		<div class="col-sm">
 			<div class="info-holder">
-				<div class="name">
-					<strong>Name: </strong><span>{{ user.name }}</span>
-				</div>
 				<div class="username">
 					<strong>Username: </strong><span>{{ user.username }}</span>
 				</div>
@@ -23,10 +20,7 @@
 					<strong>Email: </strong><span>{{ user.email }}</span>
 				</div>
 				<div class="isBlocked">
-					<strong>Blocked: </strong><span>{{ user.isBlocked }}</span>
-				</div>
-				<div class="role">
-					<strong>Role: </strong><span>{{ user.role }}</span>
+					<strong>Blocked: </strong><span>{{ user.isBlocked === '0' ? 'No' : 'Yes' }}</span>
 				</div>
 			</div>
 		</div>

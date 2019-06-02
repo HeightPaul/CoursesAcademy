@@ -42,15 +42,13 @@ export class AddUserComponent implements OnInit {
 			email:['', [Validators.required, Validators.email]],
 			username: ['', [Validators.required, Validators.minLength(3)]],
 			password: ['', [Validators.required, Validators.minLength(5)]],
-			picture: ['https://picsum.photos/200/300', Validators.required],
-			isBlocked: ['false', Validators.pattern('^(?:tru|fals)e$')],
-			role: ['user', Validators.pattern('^(?:admin|user)$')]
+			picture: ['https://picsum.photos/200/300'],
+			isBlocked: ['', Validators.pattern('^(?:1|0)$')],
+			role: ['', Validators.pattern('^(?:1|2)$')]
 		});
 	}
 
-	onFormSubmit(event): void {
-		console.log(this.userForm);
-
+	onFormSubmit(): void {
 		this.usersService.addNewUser(this.userForm.value)
 		.subscribe(() => {
 			console.log('USER CREATED');

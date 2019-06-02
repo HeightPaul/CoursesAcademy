@@ -78,10 +78,13 @@
 			<div class="offset-2 col-8">
 				<div class="form-group">
 					<label>Blocked</label>
-					<input class="form-control" name="isBlocked" formControlName="isBlocked">
+					<select class="form-control" name="isBlocked" formControlName="isBlocked">
+						<option value="1">Yes</option>
+						<option value="0">No</option>
+					</select>
 					<div class="error" *ngIf="isBlocked?.errors">
 						<span class="text-danger" *ngIf="isBlocked?.errors?.pattern">
-							Either true or false.
+							Either yes or no.
 						</span>
 					</div>
 				</div>
@@ -91,7 +94,10 @@
 			<div class="offset-2 col-8">
 				<div class="form-group">
 					<label>Role</label>
-					<input class="form-control" name="role" formControlName="role">
+					<select class="form-control" name="role" formControlName="role">
+						<option value="1">User</option>
+						<option value="2">Admin</option>
+					</select>
 					<div class="error" *ngIf="role?.errors">
 						<span class="text-danger" *ngIf="role?.errors?.pattern">
 							Either admin or user.

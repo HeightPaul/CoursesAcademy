@@ -13,13 +13,12 @@ export class CoursesListComponent implements OnInit {
 	courses: CourseInterface[] = [];
 
 	constructor(private coursesService: CoursesService,
-							private router: Router) {
+				private router: Router) {
 	}
 
 	ngOnInit() {
-		this.coursesService.getAllCourses().subscribe((response) => {
-			console.log(response);
-			this.courses = response;
+		this.coursesService.getAllCourses().subscribe((courses) => {
+			this.courses = courses;
 		});
 	}
 
@@ -31,8 +30,6 @@ export class CoursesListComponent implements OnInit {
 				console.log('COURSE DELETED');
 			});
 		}
-
-		
 	}
 
 	onAddCourse(): void {

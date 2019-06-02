@@ -1,59 +1,73 @@
 <div class="login-holder">
-  <div class="container">
-    <div class="form-holder">
-        <h3>Register</h3>
-        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label>Username</label>
-                <input type="text" 
-                class="form-control"
-                formControlName="username"
-                >
-              </div>
-            </div>
-          </div>
-          <div class="row">
-              <div class="col-12">
-                <div class="form-group">
-                  <label>Password</label>
-                  <input type="password" 
-                  class="form-control"
-                  formControlName="password"
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <div class="form-group">
-                  <label>Name</label>
-                  <input type="text" 
-                  class="form-control"
-                  formControlName="name"
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <div class="form-group">
-                  <label>Picture</label>
-                  <input type="text" 
-                  class="form-control"
-                  formControlName="picture"
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary">Register</button>
-              </div>
-            </div>
-        </form>
-    </div>    
-  </div>
+	<div class="container">
+		<div class="form-holder bg-light">
+			<h3>Register in</h3>
+			<h3><em>Courses Academy</em></h3>
+			<form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+				<div class="row">
+					<div class="col-12">
+						<div class="form-group">
+							<label>Username</label>
+							<input type="text" 
+							class="form-control"
+							formControlName="username"
+							>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="form-group">
+							<label>Email</label>
+							<input type="text" 
+							class="form-control"
+							formControlName="email"
+							>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label>Password</label>
+								<input type="password" 
+								class="form-control"
+								formControlName="password"
+								>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label>Name</label>
+								<input type="text" 
+								class="form-control"
+								formControlName="name"
+								>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label>Picture</label>
+								<input type="text" 
+								class="form-control"
+								formControlName="picture"
+								>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col m-1">
+							<button type="submit" class="btn btn-primary">Register</button>
+						</div>
+						<div class="col m-1">
+							<a routerLink="/auth/login" class="btn btn-primary">Log in</a>
+						</div>
+					</div>
+			</form>
+		</div>
+	</div>
 </div>

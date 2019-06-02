@@ -7,8 +7,8 @@
       "username": "Roberson",
       "password": "782",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": false,
-      "role": "user"
+      "isBlocked": "0",
+      "role": "1"
     },
     {
       "id": 2,
@@ -17,8 +17,8 @@
       "username": "Summers",
       "password": "220sdsd",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": true,
-      "role": "user"
+      "isBlocked": "0",
+      "role": "2"
     },
     {
       "id": 3,
@@ -27,8 +27,8 @@
       "username": "Reynolds",
       "password": "635",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": false,
-      "role": "user"
+      "isBlocked": "0",
+      "role": "2"
     },
     {
       "id": 4,
@@ -37,18 +37,18 @@
       "username": "Mamie",
       "password": "341",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": false,
-      "role": "user"
+      "isBlocked": "0",
+      "role": "2"
     },
     {
       "id": 5,
       "name": "Lyons Vincent",
       "email": "bg@dfd.sds",
       "username": "Katharine",
-      "password": 457,
+      "password": "213",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": false,
-      "role": "user"
+      "isBlocked": "0",
+      "role": "2"
     },
     {
       "name": "jason der",
@@ -57,8 +57,8 @@
       "password": "d13e",
       "picture": "https://picsum.photos/200/300",
       "id": 6,
-      "isBlocked": false,
-      "role": "user"
+      "isBlocked": "0",
+      "role": "2"
     },
     {
       "id": 7,
@@ -67,8 +67,8 @@
       "username": "Pls work",
       "password": "dopeh",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": false,
-      "role": "admin"
+      "isBlocked": "0",
+      "role": "1"
     },
     {
       "id": 8,
@@ -77,8 +77,18 @@
       "username": "Goerre",
       "password": "12345",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": false,
-      "role": "admin"
+      "isBlocked": "1",
+      "role": "1"
+    },
+    {
+      "id": 11,
+      "name": "Hello Mate",
+      "email": "hello@h.hh",
+      "username": "Hello",
+      "password": "12345",
+      "picture": "https://picsum.photos/200/300",
+      "isBlocked": "0",
+      "role": "2"
     }
   ],
   "tasks": [
