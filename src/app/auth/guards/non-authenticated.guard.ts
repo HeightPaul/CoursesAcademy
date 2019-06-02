@@ -4,23 +4,23 @@ import { Observable } from 'rxjs';
 import AuthService from '../auth.service';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class NonAuthenticatedGuard implements CanLoad {
-  
-  constructor(private authSevice: AuthService,
-              private router: Router) {
+	
+	constructor(private authSevice: AuthService,
+							private router: Router) {
 
-  }
-  
-  canLoad(
-    route: Route,
-    segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
-    
-      if (this.authSevice.isLoggedIn()) {
-        this.router.navigateByUrl('users/list');
-      }
+	}
+	
+	canLoad(
+		route: Route,
+		segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
+		
+			if (this.authSevice.isLoggedIn()) {
+				this.router.navigateByUrl('courses/list');
+			}
 
-      return true;
-  }
+			return true;
+	}
 }
