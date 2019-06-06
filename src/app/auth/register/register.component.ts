@@ -30,6 +30,8 @@ export class RegisterComponent implements OnInit {
 	}
 
 	onRegister(): void {
+		this.registerForm.value['isBlocked'] = ( this.registerForm.value['isBlocked'] === '1' );
+		this.registerForm.value['role'] = parseInt( this.registerForm.value['role'] );
 		this.usersService.getAllUsers().subscribe((users) => {
 			const username = this.registerForm.value.username.toLowerCase();
 			if (users.find(u => u.username.toLowerCase() === username)) {

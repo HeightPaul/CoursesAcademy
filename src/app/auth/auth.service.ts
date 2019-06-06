@@ -29,7 +29,7 @@ export default class AuthService {
 				
 				const user = allUsers
 				
-				.find(	u => u.isBlocked === '0' &&
+				.find(	u => u.isBlocked === false &&
 						u.username === username ||
 						u.email === username &&
 						u.password === password );

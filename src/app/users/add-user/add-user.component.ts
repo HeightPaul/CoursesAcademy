@@ -43,12 +43,14 @@ export class AddUserComponent implements OnInit {
 			username: ['', [Validators.required, Validators.minLength(3)]],
 			password: ['', [Validators.required, Validators.minLength(5)]],
 			picture: ['https://picsum.photos/200/300'],
-			isBlocked: ['', Validators.pattern('^(?:1|0)$')],
-			role: ['', Validators.pattern('^(?:1|2)$')]
+			isBlocked: ['0', Validators.pattern('^(?:1|0)$')],
+			role: ['2', Validators.pattern('^(?:1|2)$')]
 		});
 	}
 
 	onFormSubmit(): void {
+		this.userForm.value['isBlocked'] = ( this.userForm.value['isBlocked'] === '1' );
+		this.userForm.value['role'] = parseInt( this.userForm.value['role'] );
 		this.usersService.addNewUser(this.userForm.value)
 		.subscribe(() => {
 			console.log('USER CREATED');

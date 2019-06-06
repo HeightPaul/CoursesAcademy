@@ -5,6 +5,6 @@ export default interface UserInterface {
 	email: string;
 	password: string;
 	picture?: string;
-	isBlocked: string;
-	role: string;
+	isBlocked: boolean;
+	role: number;
 }

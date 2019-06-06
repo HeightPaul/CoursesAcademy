@@ -44,8 +44,8 @@ export class AddCourseComponent implements OnInit {
 		});
 	}
 
-	onFormSubmit(event): void {
-		console.log(this.courseForm);
+	onFormSubmit(): void {
+		this.courseForm.value['rating'] = parseInt( this.courseForm.value['rating'] );
 
 		this.coursesService.addNewCourse(this.courseForm.value)
 		.subscribe(() => {
