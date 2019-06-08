@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import UsersService from '../users.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import UserInterface from '../models/user.model';
 
 @Component({
 	selector: 'app-add-user',
@@ -43,15 +44,17 @@ export class AddUserComponent implements OnInit {
 			username: ['', [Validators.required, Validators.minLength(3)]],
 			password: ['', [Validators.required, Validators.minLength(5)]],
 			picture: ['https://picsum.photos/200/300'],
-			isBlocked: ['0', Validators.pattern('^(?:1|0)$')],
+			isBlocked: ['true', Validators.pattern('^(?:tru|fals)e$')],
 			role: ['2', Validators.pattern('^(?:1|2)$')]
 		});
 	}
 
 	onFormSubmit(): void {
-		this.userForm.value['isBlocked'] = ( this.userForm.value['isBlocked'] === '1' );
-		this.userForm.value['role'] = parseInt( this.userForm.value['role'] );
-		this.usersService.addNewUser(this.userForm.value)
+		const newUser = { ...this.userForm.value} as UserInterface;
+		newUser.isBlocked = ( this.userForm.value['isBlocked'] === 'true' );
+		newUser.role = parseInt( this.userForm.value['role'] );
+
+		this.usersService.addNewUser(newUser)
 		.subscribe(() => {
 			console.log('USER CREATED');
 			this.router.navigateByUrl('users/list');

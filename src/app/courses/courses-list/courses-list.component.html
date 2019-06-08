@@ -1,6 +1,6 @@
 <div class="courses-holder">
 	<div class="row m-3">
-		<button class="btn btn-primary p-3" (click)="onAddCourse()"><h4>Add new course</h4></button>
+		<button class="btn btn-primary p-3" *ngIf="canManipulate" (click)="onAddCourse()"><h4>Add new course</h4></button>
 	</div>
 	<div class="row ml-1 mr-1">
 		<div class="course-card col-4 mt-3 mb-3" *ngFor="let currentCourse of courses; let index = index">

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import CourseInterface from '../models/course.model';
 import CoursesService from '../courses.service';
 import { Router } from '@angular/router';
+import AuthService from 'src/app/auth/auth.service';
+import UserInterface from 'src/app/users/models/user.model';
 
 @Component({
 	selector: 'app-courses-list',
@@ -10,10 +12,14 @@ import { Router } from '@angular/router';
 })
 export class CoursesListComponent implements OnInit {
 
+	user: UserInterface;
+
 	courses: CourseInterface[] = [];
 
 	constructor(private coursesService: CoursesService,
+				private authService: AuthService,
 				private router: Router) {
+		this.user = this.authService.getLoggedUser();
 	}
 
 	ngOnInit() {
@@ -34,5 +40,13 @@ export class CoursesListComponent implements OnInit {
 
 	onAddCourse(): void {
 		this.router.navigateByUrl('/courses/add');
+	}
+
+	get canManipulate(): boolean {
+		if( this.user ){
+			return this.user.role === 1;
+		} else {
+			return false;
+		}
 	}
 }

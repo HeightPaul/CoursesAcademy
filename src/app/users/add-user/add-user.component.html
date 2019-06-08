@@ -79,8 +79,8 @@
 				<div class="form-group">
 					<label>Blocked</label>
 					<select class="form-control" name="isBlocked" formControlName="isBlocked">
-						<option value="1">Yes</option>
-						<option value="0">No</option>
+						<option value="true">Yes</option>
+						<option value="false">No</option>
 					</select>
 					<div class="error" *ngIf="isBlocked?.errors">
 						<span class="text-danger" *ngIf="isBlocked?.errors?.pattern">

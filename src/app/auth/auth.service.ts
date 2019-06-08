@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import UserInterface from '../users/models/user.model';
 import UsersService from '../users/users.service';
+import { Router } from '@angular/router';
 
 @Injectable({
 	providedIn: 'root'
@@ -10,7 +11,8 @@ import UsersService from '../users/users.service';
 export default class AuthService {
 
 	constructor(private http: HttpClient,
-				private usersService: UsersService) {
+				private usersService: UsersService,
+				private router: Router) {
 
 	}
 
@@ -28,10 +30,8 @@ export default class AuthService {
 			.subscribe((allUsers) => {
 				
 				const user = allUsers
-				
-				.find(	u => u.isBlocked === false &&
-						u.username === username ||
-						u.email === username &&
+				.find(	u => ( u.username === username || u.email === username ) &&
+						u.isBlocked === false &&
 						u.password === password );
 
 				if (user) {
@@ -44,4 +44,9 @@ export default class AuthService {
 			});
 		});
 	}
- }
+
+	public logout(): void {
+		sessionStorage.removeItem('loggedUser');
+		this.router.navigateByUrl('courses/list');
+	}
+}

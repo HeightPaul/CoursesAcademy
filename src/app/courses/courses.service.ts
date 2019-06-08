@@ -29,7 +29,7 @@ export default class CoursesService {
 		return this.http.get<CourseInterface>(`http://localhost:3000/courses/${id}`);
 	}
 
-	public assignTask(course: CourseInterface): Observable<any> {
+	public assignCourse(course: CourseInterface): Observable<any> {
 		return this.http.put(`http://localhost:3000/courses/${course.id}`, course);
 	}
 }

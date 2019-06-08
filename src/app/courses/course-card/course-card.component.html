@@ -1,23 +1,27 @@
 <div class="course-card bg-light p-2">
-	<div class="d-flex justify-content-end flex-wrap mt-2 mb-1">
-		<h3 class="mr-lg-5 mt-2">Title:</h3><br>
-		<span class="assign-btn btn btn-info m-1" title="Assign" (click)="onAssignClick()">Assign to this course</span>
-		<span class="edit-btn btn btn-success m-1" (click)="onCourseEdit()">Edit</span>
-		<span class="delete-btn btn btn-danger m-1" tooltip="Delete" placement="top"
-			container="body"title="Delete" (click)="onDeleteClicked()">X</span>
-	</div>
-	<div class="info-holder">
-		<div class="title mt-2 mb-2">
+	<div class="row">
+		<div class="col-sm">
 			<h3>{{ course.title }}</h3>
 		</div>
+		<div class="col-sm text-right">
+			<button class="assign-btn btn btn-info m-1" *ngIf="isLoggedIn" [disabled]="canAssign" title="Assign" (click)="onAssignClick()">Assign to this course</button>
+			<span class="edit-btn btn btn-success m-1" *ngIf="canManipulate" (click)="onCourseEdit()">Edit</span>
+			<span class="delete-btn btn btn-danger m-1" *ngIf="canManipulate" tooltip="Delete" placement="top"
+				container="body"title="Delete" (click)="onDeleteClicked()">X</span>
+		</div>
+	</div>
+	<div class="info-holder">
 		<div class="description">
 			<strong>Description: </strong><span>{{ course.description }}</span>
 		</div>
-		<div class="rating">
+		<div class="rating" *ngIf="canSee">
 			<strong>Rating: </strong><span>{{ course.rating }}</span>
 		</div>
-		<div class="assignee">
-			<strong>Assignee: </strong><span>{{ course.assigneeId }}</span>
+		<div class="assignee" *ngIf="canSee">
+			<strong>Assignees: </strong>
+			<div *ngFor="let assignee of course.assignees">
+				{{ assignee.name }}
+			</div>
 		</div>
 	</div>
 </div>

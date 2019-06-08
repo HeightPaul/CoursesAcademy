@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import CoursesService from '../courses.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import CourseInterface from '../models/course.model';
 
 @Component({
 	selector: 'app-add-course',
@@ -45,9 +46,11 @@ export class AddCourseComponent implements OnInit {
 	}
 
 	onFormSubmit(): void {
-		this.courseForm.value['rating'] = parseInt( this.courseForm.value['rating'] );
+		const newCourse = { ...this.courseForm.value} as CourseInterface;
+		newCourse.assignees = newCourse.assignees || [];
+		newCourse.rating = parseInt( this.courseForm.value['rating'] );
 
-		this.coursesService.addNewCourse(this.courseForm.value)
+		this.coursesService.addNewCourse(newCourse)
 		.subscribe(() => {
 			console.log('COURSE CREATED');
 			this.router.navigateByUrl('courses/list');

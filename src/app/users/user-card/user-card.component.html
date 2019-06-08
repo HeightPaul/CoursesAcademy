@@ -1,11 +1,15 @@
 <div class="user-card bg-light p-2">
-	<div class="d-flex justify-content-end flex-wrap mt-2 mb-1">
-		<h3 class="mr-5">{{ user.name }}</h3>
-		<span class="edit-btn btn btn-success m-1" (click)="onUserEdit()">Edit</span>
-		<span class="delete-btn btn btn-danger m-1" tooltip="Delete" placement="top"
-			container="body" title="Delete" (click)="onDeleteClicked()">X</span>
+	<div class="row">
+		<div class="col-sm">
+			<h3>{{ user.name }}</h3>
+		</div>
+		<div class="col-sm text-right">
+			<span class="btn btn-success m-1" (click)="onUserEdit()" *ngIf="canEdit">Edit</span>
+			<span class="btn btn-danger m-1" tooltip="Delete" placement="top"
+				container="body" title="Delete" (click)="onDeleteClicked()" *ngIf="canDelete">X</span>
+		</div>
 	</div>
-	<div class="row flex-wrap">
+	<div class="row">
 		<div class="col-sm">
 			<div class="image-holder">
 				<img class="user-img" [src]="getUserImage()" alt="user picture" />
@@ -19,8 +23,11 @@
 				<div class="email">
 					<strong>Email: </strong><span>{{ user.email }}</span>
 				</div>
-				<div class="isBlocked">
+				<div class="isBlocked" *ngIf="canEdit">
 					<strong>Blocked: </strong><span>{{ user.isBlocked ? 'Yes' : 'No' }}</span>
+				</div>
+				<div class="role" *ngIf="canEdit">
+					<strong>Role: </strong><span>{{ user.role === 1 ? 'Admin' : 'User' }}</span>
 				</div>
 			</div>
 		</div>

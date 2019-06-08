@@ -14,14 +14,8 @@ export const routes: Routes = [
 				canLoad: [AuthenticatedGuard]
 			},
 			{
-				path: 'tasks',
-				loadChildren: './tasks/tasks.module#TasksModule',
-				canLoad: [AuthenticatedGuard]
-			},
-			{
 				path: 'courses',
-				loadChildren: './courses/courses.module#CoursesModule',
-				canLoad: [AuthenticatedGuard]
+				loadChildren: './courses/courses.module#CoursesModule'
 			}
 		]
 	},
