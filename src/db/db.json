@@ -7,8 +7,8 @@
       "username": "Roberson",
       "password": "782",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": "0",
-      "role": "1"
+      "isBlocked": false,
+      "role": 1
     },
     {
       "id": 2,
@@ -17,8 +17,8 @@
       "username": "Summers",
       "password": "220sdsd",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": "0",
-      "role": "2"
+      "isBlocked": false,
+      "role": 2
     },
     {
       "id": 3,
@@ -27,8 +27,8 @@
       "username": "Reynolds",
       "password": "635",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": "0",
-      "role": "2"
+      "isBlocked": false,
+      "role": 2
     },
     {
       "id": 4,
@@ -37,8 +37,8 @@
       "username": "Mamie",
       "password": "341",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": "0",
-      "role": "2"
+      "isBlocked": false,
+      "role": 2
     },
     {
       "id": 5,
@@ -47,8 +47,8 @@
       "username": "Katharine",
       "password": "213",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": "0",
-      "role": "2"
+      "isBlocked": false,
+      "role": 2
     },
     {
       "name": "jason der",
@@ -57,8 +57,8 @@
       "password": "d13e",
       "picture": "https://picsum.photos/200/300",
       "id": 6,
-      "isBlocked": "0",
-      "role": "2"
+      "isBlocked": false,
+      "role": 2
     },
     {
       "id": 7,
@@ -67,8 +67,8 @@
       "username": "Pls work",
       "password": "dopeh",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": "0",
-      "role": "1"
+      "isBlocked": false,
+      "role": 1
     },
     {
       "id": 8,
@@ -77,8 +77,8 @@
       "username": "Goerre",
       "password": "12345",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": "1",
-      "role": "1"
+      "isBlocked": true,
+      "role": 1
     },
     {
       "id": 11,
@@ -87,8 +87,8 @@
       "username": "Hello",
       "password": "12345",
       "picture": "https://picsum.photos/200/300",
-      "isBlocked": "0",
-      "role": "2"
+      "isBlocked": false,
+      "role": 2
     }
   ],
   "tasks": [
@@ -161,7 +161,7 @@
       "id": "lUpDI44",
       "title": "Python in Data Science",
       "description": "The most recent major version of Python is Python 3, which we shall be using in this tutorial. However, Python 2, although not being updated with anything other than security updates, is still quite popular.",
-      "rating": "1"
+      "rating": 1
     }
   ]
 }
