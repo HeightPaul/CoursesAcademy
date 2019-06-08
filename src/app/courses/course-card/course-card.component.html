@@ -1,4 +1,4 @@
-<div class="course-card bg-light p-2">
+<div class="course-card bg-light p-3">
 	<div class="row">
 		<div class="col-sm">
 			<h3>{{ course.title }}</h3>
@@ -15,7 +15,11 @@
 			<strong>Description: </strong><span>{{ course.description }}</span>
 		</div>
 		<div class="rating" *ngIf="canSee">
-			<strong>Rating: </strong><span>{{ course.rating }}</span>
+			<strong>Rating: </strong><span>{{ overallRating }}</span>
+			<form class="form-inline mt-1 mb-1" [formGroup]="ratingForm" (ngSubmit)="onFormSubmit($event)" *ngIf="canRate">
+				<input class="form-control" name="rating" formControlName="rating">
+				<button type="submit" class="ml-1 btn btn-warning" [disabled]="!isFormValid">Rate it</button>
+			</form>
 		</div>
 		<div class="assignee" *ngIf="canSee">
 			<strong>Assignees: </strong>

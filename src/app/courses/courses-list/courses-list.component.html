@@ -1,9 +1,9 @@
 <div class="courses-holder">
-	<div class="row m-3">
-		<button class="btn btn-primary p-3" *ngIf="canManipulate" (click)="onAddCourse()"><h4>Add new course</h4></button>
+	<div class="row m-3" *ngIf="canManipulate" >
+		<button class="btn btn-primary p-3" (click)="onAddCourse()"><h4>Add new course</h4></button>
 	</div>
-	<div class="row ml-1 mr-1">
-		<div class="course-card col-4 mt-3 mb-3" *ngFor="let currentCourse of courses; let index = index">
+	<div class="row ml-1 mr-1 mt-3">
+		<div class="course-card col-4 mt-2 mb-2" *ngFor="let currentCourse of courses; let index = index">
 			<app-course-card (onDelete)="onItemDeleted($event)" [course]="currentCourse"></app-course-card>
 		</div>
 	</div>

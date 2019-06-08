@@ -1,9 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import CourseInterface from '../models/course.model';
 import CoursesService from '../courses.service';
 import AuthService from 'src/app/auth/auth.service';
 import AssigneeInterface from '../models/assignee.model';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
 	selector: 'app-course-card',
@@ -15,15 +16,50 @@ export class CourseCardComponent implements OnInit {
 	@Input() course: CourseInterface;
 	@Output() onDelete: EventEmitter<number> = new EventEmitter();
 
+	ratingForm: FormGroup;
 	isLoggedIn: boolean = false;
 
 	constructor(private router: Router,
+				private fBuilder: FormBuilder,
 				private coursesService: CoursesService,
-				private authService: AuthService) {
+				private authService: AuthService,
+				private route: ActivatedRoute) {
 		this.isLoggedIn = this.authService.isLoggedIn();
+		this.route.params.subscribe((params) => {
+			if (params.id) {
+				this.coursesService.getById(params.id)
+				.subscribe((course) => {
+					this.createForm();
+
+					this.ratingForm.patchValue({...course});
+				});
+			}
+		});
+		
+		this.createForm();
 	}
 
 	ngOnInit() {
+	}
+
+	private createForm(): void {
+		this.ratingForm = this.fBuilder.group({
+			rating: ['1', Validators.pattern('^[1-9][0-9]?$|^100$')]
+		});
+	}
+
+	onFormSubmit(): void {
+		const user = this.authService.getLoggedUser();
+
+		this.course.assignees.find(a => a.id === user.id).rating = parseInt(this.ratingForm.value['rating']);
+
+		this.coursesService.assignCourse(this.course).subscribe(() => {
+			console.log('SUCCESS RATING');
+		});
+	}
+
+	get isFormValid(): boolean {
+		return this.ratingForm.valid;
 	}
 
 	onDeleteClicked() {
@@ -63,20 +99,42 @@ export class CourseCardComponent implements OnInit {
 	 
 		return this.course.assignees.findIndex(u => u.id === userId) !== -1;
 	}
+	get canSee(): boolean {
+		return this.authService.getLoggedUser() !== null;
+	}
 
 	get canManipulate(): boolean {
-		if( this.authService.getLoggedUser() !== null){
+		if( this.canSee ){
 			return this.authService.getLoggedUser().role === 1;
 		} else {
 			return false;
 		}
 	}
 
-	get canSee(): boolean {
-		if( this.authService.getLoggedUser() !== null){
-			return true;
-		} else {
+	get canRate(): boolean{
+		if ( this.canSee ){
+			const loggedUserId = this.authService.getLoggedUser().id;
+			if( this.course.assignees.find( a => a.id === loggedUserId ) ){
+				return true;
+			};
 			return false;
 		}
+		return false;
+	}
+
+	get overallRating(): number{
+		let allRatings = 0;
+		let raters = 0;
+		
+			this.course.assignees.forEach(assignee => {
+				if (assignee.rating) {
+					allRatings += assignee.rating;
+					raters++;
+				}
+				else{
+					raters = 1;
+				}
+			});
+			return allRatings/raters;
 	}
 }

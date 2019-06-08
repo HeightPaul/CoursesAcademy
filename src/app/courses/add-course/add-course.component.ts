@@ -14,9 +14,9 @@ export class AddCourseComponent implements OnInit {
 	courseForm: FormGroup;
 
 	constructor(private fb: FormBuilder,
-							private coursesService: CoursesService,
-							private router: Router,
-							private route: ActivatedRoute) {
+				private coursesService: CoursesService,
+				private router: Router,
+				private route: ActivatedRoute) {
 
 		this.route.params.subscribe((params) => {
 
@@ -54,7 +54,7 @@ export class AddCourseComponent implements OnInit {
 		.subscribe(() => {
 			console.log('COURSE CREATED');
 			this.router.navigateByUrl('courses/list');
-		})
+		});
 	}
 
 	get isFormValid(): boolean {
