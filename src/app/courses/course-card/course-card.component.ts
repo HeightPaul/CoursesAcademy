@@ -25,6 +25,7 @@ export class CourseCardComponent implements OnInit {
 				private authService: AuthService,
 				private route: ActivatedRoute) {
 		this.isLoggedIn = this.authService.isLoggedIn();
+
 		this.route.params.subscribe((params) => {
 			if (params.id) {
 				this.coursesService.getById(params.id)
@@ -52,6 +53,7 @@ export class CourseCardComponent implements OnInit {
 		const user = this.authService.getLoggedUser();
 
 		this.course.assignees.find(a => a.id === user.id).rating = parseInt(this.ratingForm.value['rating']);
+		this.course.rating = this.overallRating(this.course.rating);
 
 		this.coursesService.assignCourse(this.course).subscribe(() => {
 			console.log('SUCCESS RATING');
@@ -122,19 +124,40 @@ export class CourseCardComponent implements OnInit {
 		return false;
 	}
 
-	get overallRating(): number{
+	get canRateOnce(): boolean{
+		if ( this.canSee ){
+			const loggedUserId = this.authService.getLoggedUser().id;
+			if( this.course.assignees.find( a => a.rating && a.id === loggedUserId ) ){
+				return false;
+			};
+			return true;
+		}
+		return true;
+	}
+
+	/**
+	 * @brief Complex summing of all asignees' ratings and its course rating
+	 * 
+	 * @param initialRating
+	 * 
+	 * @return number
+	 */
+	overallRating(initialRating: number): number{
 		let allRatings = 0;
 		let raters = 0;
 		
-			this.course.assignees.forEach(assignee => {
-				if (assignee.rating) {
-					allRatings += assignee.rating;
-					raters++;
-				}
-				else{
-					raters = 1;
-				}
-			});
-			return allRatings/raters;
+		this.course.assignees.forEach(assignee => {
+			if (assignee.rating) {
+				allRatings += assignee.rating;
+				raters++;
+			}
+		});
+
+		if (initialRating) {
+			return (allRatings+initialRating)/(raters+1);
+		}
+		else{
+			return (allRatings)/(raters);
+		}
 	}
 }

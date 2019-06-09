@@ -15,8 +15,8 @@
 			<strong>Description: </strong><span>{{ course.description }}</span>
 		</div>
 		<div class="rating" *ngIf="canSee">
-			<strong>Rating: </strong><span>{{ overallRating }}</span>
-			<form class="form-inline mt-1 mb-1" [formGroup]="ratingForm" (ngSubmit)="onFormSubmit($event)" *ngIf="canRate">
+			<strong>Rating: </strong><span>{{ course.rating }} %</span>
+			<form class="form-inline mt-1 mb-1" [formGroup]="ratingForm" (ngSubmit)="onFormSubmit($event)" *ngIf="canRate && canRateOnce">
 				<input class="form-control" name="rating" formControlName="rating">
 				<button type="submit" class="ml-1 btn btn-warning" [disabled]="!isFormValid">Rate it</button>
 			</form>

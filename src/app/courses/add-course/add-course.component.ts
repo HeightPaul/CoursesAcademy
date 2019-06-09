@@ -41,7 +41,7 @@ export class AddCourseComponent implements OnInit {
 			id: [''],
 			title: ['', Validators.minLength(2)],
 			description:['', Validators.minLength(10)],
-			rating: ['1', Validators.pattern('^[1-9][0-9]?$|^100$')]
+			rating: ['', Validators.pattern('^[0-9]+(\.[0-9]{1,2})?$')]
 		});
 	}
 
