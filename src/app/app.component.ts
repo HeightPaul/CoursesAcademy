@@ -1,36 +1,25 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, DoCheck {
-  title = 'course-work';
-  // message = 'Hello World!';
+	title = 'Courses Academy';
 
-  testObj;
-  numbersArray: number[] = [1, 2, 3, 4, 5];
+	constructor() {
+		this.title = 'faudshfdjs';
+	}
 
-  constructor() {
-    this.title = 'faudshfdjs';
-  }
+	ngOnInit() {
+	}
 
-  ngOnInit() {
-      setTimeout(() => {
-        this.testObj = {
-          prop1: 'First Prop',
-          prop2: 'Second prop'
-        };
-      }, 6000);
-  }
+	ngDoCheck() {
+	}
 
-  ngDoCheck() {
-    console.log('TEST DO CHECK');
-  }
-
-  getText(): string {
-    return this.title;
-  }
+	getText(): string {
+		return this.title;
+	}
 
 }

@@ -2,38 +2,42 @@
 	<div class="container">
 		<div class="form-holder bg-light">
 			<h3>Log in</h3>
-			<h3><em>Courses Academy</em></h3>
+			<h3><em>Courses <span class="h2">@</span>cademy</em></h3>
 			<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
 				<div class="row">
 					<div class="col-12">
 						<div class="form-group">
 							<label>Username or email</label>
-							<input type="text" 
-							class="form-control"
-							formControlName="username"
-							>
+							<input type="text" class="form-control" formControlName="username">
+							<div class="error" *ngIf="name?.errors?.required">
+								<span class="text-danger">
+									This field is required.
+								</span>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
-						<div class="col-12">
-							<div class="form-group">
-								<label>Password</label>
-								<input type="password" 
-								class="form-control"
-								formControlName="password"
-								>
+					<div class="col-12">
+						<div class="form-group">
+							<label>Password</label>
+							<input type="password" class="form-control" formControlName="password">
+							<div class="error" *ngIf="name?.errors?.required">
+								<span class="text-danger">
+									This field is required.
+								</span>
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col m-1">
-							<button type="submit" class="btn btn-primary">Log in</button>
-						</div>
-						<div class="col m-1">
-							<a routerLink="/auth/register" class="btn btn-primary">Register</a>
-						</div>
+				</div>
+				<div class="row">
+					<div class="col m-1">
+						<button type="submit" class="btn btn-primary" [disabled]="!isFormValid">Log in</button>
 					</div>
+					<div class="col m-1">
+						<a routerLink="/auth/register" class="btn btn-primary">Register</a>
+					</div>
+				</div>
 			</form>
 		</div>
 	</div>

@@ -48,7 +48,7 @@ export class AddCourseComponent implements OnInit {
 	onFormSubmit(): void {
 		const newCourse = { ...this.courseForm.value} as CourseInterface;
 		newCourse.assignees = newCourse.assignees || [];
-		newCourse.rating = parseInt( this.courseForm.value['rating'] );
+		newCourse.rating = parseFloat( this.courseForm.value['rating'] );
 
 		this.coursesService.addNewCourse(newCourse)
 		.subscribe(() => {

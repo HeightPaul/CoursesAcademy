@@ -45,14 +45,14 @@ export class CourseCardComponent implements OnInit {
 
 	private createForm(): void {
 		this.ratingForm = this.fBuilder.group({
-			rating: ['1', Validators.pattern('^[1-9][0-9]?$|^100$')]
+			rating: ['1', Validators.pattern('^[0-9]+(\.[0-9]{1,2})?$')]
 		});
 	}
 
 	onFormSubmit(): void {
 		const user = this.authService.getLoggedUser();
 
-		this.course.assignees.find(a => a.id === user.id).rating = parseInt(this.ratingForm.value['rating']);
+		this.course.assignees.find(a => a.id === user.id).rating = parseFloat(this.ratingForm.value['rating']);
 		this.course.rating = this.overallRating(this.course.rating);
 
 		this.coursesService.assignCourse(this.course).subscribe(() => {

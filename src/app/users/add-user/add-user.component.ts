@@ -52,7 +52,7 @@ export class AddUserComponent implements OnInit {
 	onFormSubmit(): void {
 		const newUser = { ...this.userForm.value} as UserInterface;
 		newUser.isBlocked = ( this.userForm.value['isBlocked'] === 'true' );
-		newUser.role = parseInt( this.userForm.value['role'] );
+		newUser.role = parseFloat( this.userForm.value['role'] );
 
 		this.usersService.addNewUser(newUser)
 		.subscribe(() => {

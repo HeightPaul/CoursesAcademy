@@ -23,15 +23,13 @@ export class RegisterComponent implements OnInit {
 			name: ['', Validators.required],
 			email: ['', [Validators.required, Validators.email]],
 			username: ['', [Validators.required, Validators.minLength(3)]],
-			password: ['', [Validators.required, Validators.maxLength(5)]],
+			password: ['', [Validators.required, Validators.minLength(5)]],
 			picture: ['https://picsum.photos/200/300', Validators.required],
 		});
 	}
 
 	onRegister(): void {
 		const newUser = { ...this.registerForm.value} as UserInterface;
-		newUser.isBlocked = false;
-		newUser.role = 2;
 
 		this.usersService.getAllUsers().subscribe((users) => {
 			const username = newUser.username.toLowerCase();
@@ -39,11 +37,41 @@ export class RegisterComponent implements OnInit {
 				return;
 			}
 
+			newUser.isBlocked = false;
+			newUser.role = 2;
 			this.usersService.addNewUser(newUser)
 				.subscribe(() => {
 					this.router.navigateByUrl('auth/login');
 				});
 
 		});
+	}
+
+	get isFormValid(): boolean {
+		return this.registerForm.valid;
+	}
+
+	get username() {
+		return this.registerForm.get('username');
+	}
+
+	get password() {
+		return this.registerForm.get('password');
+	}
+
+	get name() {
+		return this.registerForm.get('name');
+	}
+
+	get picture() {
+		return this.registerForm.get('picture');
+	}
+
+	get email() {
+		return this.registerForm.get('email');
+	}
+
+	get das(){
+		return true;
 	}
 }

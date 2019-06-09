@@ -38,10 +38,10 @@
 					<label>Name</label>
 					<input class="form-control" name="name" formControlName="name">
 					<div class="error" *ngIf="name?.errors?.required">
-							<span class="text-danger">
-								This field is required.
-							</span>
-						</div>
+						<span class="text-danger">
+							This field is required.
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -52,12 +52,12 @@
 					<input type="password" name="password" class="form-control" formControlName="password">
 					<div class="error" *ngIf="password?.errors">
 						<span class="text-danger" *ngIf="password?.errors?.required">
-								This field is required.
-							</span>
-							<span class="text-danger" *ngIf="password?.errors?.minlength">
-								The min length is 5.
-							</span>
-						</div>
+							This field is required.
+						</span>
+						<span class="text-danger" *ngIf="password?.errors?.minlength">
+							The min length is 5.
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>

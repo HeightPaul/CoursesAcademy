@@ -36,4 +36,7 @@ export class LoginComponent implements OnInit {
 		});
 	}
 
+	get isFormValid(): boolean {
+		return this.loginForm.valid;
+	}
 }
