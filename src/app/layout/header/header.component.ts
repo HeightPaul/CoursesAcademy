@@ -20,4 +20,8 @@ export class HeaderComponent implements OnInit {
 	onClickLogout(): void{
 		this.authService.logout();
 	}
+
+	get signedUser(){
+		return this.authService.getLoggedUser();
+	}
 }
