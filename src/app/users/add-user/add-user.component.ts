@@ -51,14 +51,24 @@ export class AddUserComponent implements OnInit {
 
 	onFormSubmit(): void {
 		const newUser = { ...this.userForm.value} as UserInterface;
-		newUser.isBlocked = ( this.userForm.value['isBlocked'] === 'true' );
-		newUser.role = parseFloat( this.userForm.value['role'] );
 
-		this.usersService.addNewUser(newUser)
-		.subscribe(() => {
-			console.log('USER CREATED');
-			this.router.navigateByUrl('users/list');
-		})
+		this.usersService.getAllUsers().subscribe((users) => {
+			const username = newUser.username.toLowerCase();
+			const email = newUser.email.toLowerCase();
+			if (users.find(u =>
+				u.username.toLowerCase() === username ||
+				u.email.toLowerCase() === email )) {
+				return;
+			}
+
+			newUser.isBlocked = ( this.userForm.value['isBlocked'] === 'true' );
+			newUser.role = parseFloat( this.userForm.value['role'] );
+			this.usersService.addNewUser(newUser)
+				.subscribe(() => {
+					console.log('USER CREATED');
+					this.router.navigateByUrl('users/list');
+			});
+		});
 	}
 
 	get isFormValid(): boolean {

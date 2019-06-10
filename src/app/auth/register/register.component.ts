@@ -33,7 +33,10 @@ export class RegisterComponent implements OnInit {
 
 		this.usersService.getAllUsers().subscribe((users) => {
 			const username = newUser.username.toLowerCase();
-			if (users.find(u => u.username.toLowerCase() === username)) {
+			const email = newUser.email.toLowerCase();
+			if (users.find(u =>
+				u.username.toLowerCase() === username ||
+				u.email.toLowerCase() === email )) {
 				return;
 			}
 

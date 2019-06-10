@@ -99,16 +99,6 @@
       "picture": "https://picsum.photos/400/300",
       "isBlocked": false,
       "role": 2
-    },
-    {
-      "id": 13,
-      "name": "wefewf",
-      "email": "fewfwef@dd.dd",
-      "username": "asdasdas",
-      "password": "ewfwefwef",
-      "picture": "https://picsum.photos/200/300",
-      "isBlocked": false,
-      "role": 2
     }
   ],
   "courses": [
